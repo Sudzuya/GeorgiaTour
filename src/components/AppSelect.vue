@@ -10,7 +10,7 @@
             </div>
             <div class="app-select__options">
                 <div class="app-select__option"
-                    v-for="option of options" 
+                    v-for="option of options"
                     :key="option"
                     @click="selectOptions(option)"
                 >
@@ -31,7 +31,7 @@ export default {
             required: true
         },
         modelValue: {
-            type: Object,
+            type: String,
             required: false
         },
         title: {
@@ -46,7 +46,6 @@ export default {
 
 
         //functions
-
         const setActiveSelect = () => {
             activeClass.value = !activeClass.value
         }

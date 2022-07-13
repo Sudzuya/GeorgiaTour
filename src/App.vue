@@ -45,11 +45,11 @@
               </div>
               <div class="form__input-body">
                 <div class="form__title">Куда</div>
-                <input type="text"  v-model="form.to" placeholder="Название города или аэропорта" class="form__input">
+                <input type="text" v-model="form.to" placeholder="Название города или аэропорта" class="form__input">
               </div>
               <div class="form__input-body">
                 <div class="form__title">Дата тура</div>
-                <input type="date"  v-model="form.date" class="form__input">
+                <input type="date" v-model="form.date" class="form__input">
               </div>
               <button class="form__submit btn-orange" type="submit">Поиск</button>
             </div>
@@ -188,7 +188,8 @@
               О нас
             </div>
             <div class="footer-info__about-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
             </div>
           </div>
           <div class="footer-info__contact">
@@ -257,42 +258,37 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import {form} from "@/store/globalSearch";
+import {watch} from "vue";
+import {useRouter, useRoute} from 'vue-router'
 
 export default {
   setup() {
     const router = useRouter()
     const route = useRoute()
 
-    const form = ref({
-      from: null,
-      to: null,
-      date: null,
-    })
-
-
-  watch(() => form, 
-    () => {
-      if((form.value.from || form.value.to || form.value.date) && route.name !== 'SearchCar') {
-        router.push({name: 'SearchCar', params: {
-            from: form.value.from,
-            to: form.value.to,
-            date: form.value.date,
-        }})
-      } else if((form.value.from || form.value.to || form.value.date) && route.name === 'SearchCar') {
-        route.params.from = form.value.from
-        route.params.to = form.value.to
-        route.params.date = form.value.date
-      } else {
-        router.push({name: 'home'})
-      } 
-    },
-    {
-      deep: true
-    }
-  )
-
+    watch(() => form,
+        () => {
+          if ((form.value.from || form.value.to || form.value.date) && route.name !== 'SearchCar') {
+            router.push({
+              name: 'SearchCar', params: {
+                from: form.value.from,
+                to: form.value.to,
+                date: form.value.date,
+              }
+            })
+          } else if ((form.value.from || form.value.to || form.value.date) && route.name === 'SearchCar') {
+            route.params.from = form.value.from
+            route.params.to = form.value.to
+            route.params.date = form.value.date
+          } else {
+            router.push({name: 'home'})
+          }
+        },
+        {
+          deep: true
+        }
+    )
     return {
       form,
     }
@@ -301,21 +297,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header{
-  &__body{
+.header {
+  &__body {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 }
-.account{
+
+.account {
   display: flex;
   gap: 21px;
-  &__login{
+
+  &__login {
     font-weight: 700;
     color: #333333;
   }
-  &__reg{
+
+  &__reg {
     padding: 7px 24px;
   }
 }
