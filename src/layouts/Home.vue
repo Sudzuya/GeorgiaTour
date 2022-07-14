@@ -2,9 +2,9 @@
   <header class="header">
     <div class="header__container">
       <div class="header__body">
-        <div class="header__logo">
+        <a  class="header__logo">
           <img src="img/logo.svg" alt="">
-        </div>
+        </a>
         <div class="header__account account">
           <button class="account__login">Войти</button>
           <button class="account__reg btn-orange">Регистрация</button>
@@ -58,6 +58,9 @@
       </div>
     </div>
   </section>
+  <div>
+      <slot></slot>
+  </div>
   <section class="subinfo">
     <div class="subinfo__container">
       <div class="subinfo__body">
@@ -100,7 +103,6 @@
       </div>
     </div>
   </section>
-  <router-view/>
   <section class="callback">
     <div class="callback__bg">
       <img src="img/bg/footerbg.jpg" alt="">
@@ -296,7 +298,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+
+<style lang="scss">
 .header {
   &__body {
     display: flex;
@@ -304,7 +307,6 @@ export default {
     justify-content: space-between;
   }
 }
-
 .account {
   display: flex;
   gap: 21px;

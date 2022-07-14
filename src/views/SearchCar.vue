@@ -44,7 +44,7 @@
                     <img src="img/drivers/driver/01.png" alt="">
                   </div>
                   <div class="drivers__title">
-                    {{ driver.nameDriver }}
+                    {{ driver.name }}
                   </div>
                   <div class="drivers__rating">
                     (124 отзыва)
@@ -52,9 +52,9 @@
                 </div>
                 <div class="drivers__type-car">
                   <div class="drivers__type-car-img">
-                    <img :src="`img/drivers/icon-car/${driver.typeCar}.svg`" alt="">
+                    <img :src="`img/drivers/icon-car/${driver.typeCarImg}.svg`" alt="">
                   </div>
-                  {{ driver.nameCar }}
+                  {{ driver.typeCar.title }}
                 </div>
               </div>
               <div class="drivers__body">
@@ -69,11 +69,11 @@
                 </div>
                 <div class="drivers__content">
                   <div class="drivers__img">
-                    <img :src="`img/drivers/car/${driver.carName}.png`" alt="">
+                    <img :src="`img/drivers/car/${driver.nameImage}.png`" alt="">
                   </div>
                   <div class="drivers__info">
                     <div class="drivers__info-title">
-                      {{ driver.carTitle }}
+                      {{ driver.carName }}
                     </div>
                     <div class="drivers__info-fuel">
                       <span>Тип топлива: </span>{{ driver.fuel.title }}

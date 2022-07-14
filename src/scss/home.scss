@@ -594,6 +594,7 @@
 
 .search-car {
     padding: 72px 0 97px;
+    color: #040813;
 
     span {
         font-weight: 700; 
@@ -626,6 +627,8 @@
 .drivers {
 
     &__select-body {
+        max-width: 1085px;
+        margin: 0 auto 95px auto;
     }
 
     &__select {

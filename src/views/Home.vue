@@ -1,5 +1,4 @@
 <template>
-
   <section class="tour">
     <div class="tour__container">
       <div class="tour__body">
@@ -24,7 +23,7 @@
           <div data-tabs-body class="tabs__content">
             <div class="tabs__body">
               <div class="tabs__inner">
-                <div v-for="(tour, index) in tours" :key="index" class="tabs__item">
+                <router-link :to="{name:'Tour'}" v-for="(tour, index) in tours" :key="index" class="tabs__item">
                   <div class="tabs__img">
                     <img :src="`img/bg/${tour.bg}.jpg`" alt="">
                   </div>
@@ -37,7 +36,7 @@
                   <div class="tabs__subtitle">
                     {{tour.dataTour}}
                   </div>
-                </div>
+                </router-link>
               </div>
             </div>
             <div class="tabs__body">
@@ -48,9 +47,7 @@
       </div>
     </div>
   </section>
-
 </template>
-
 <script>
 import {flsFunctions} from '../helpers/app'
 
@@ -80,3 +77,7 @@ export default {
 
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
