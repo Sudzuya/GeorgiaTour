@@ -27,21 +27,21 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.other-books-slider')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.tour-slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.other-books-slider', { // Указываем скласс нужного слайдера
+		new Swiper('.tour-slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			wrapperClass:'other-books-slider__body',
-			slideClass:'other-books-slider__slide',
+			wrapperClass:'tour-slider__wrapper',
+			slideClass:'tour-slider__slide',
 			modules: [Navigation, Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 3,
-			spaceBetween: 0,
+			spaceBetween: 30,
 			autoHeight: true,
 			speed: 800,
-
+			centeredSlides:true,
 			//touchRatio: 0,
 			//simulateTouch: false,
 			loop: true,
@@ -51,10 +51,10 @@ function initSliders() {
 			
 			//Эффекты
 			effect: 'fade',
-			autoplay: {
-				delay: 2000,
-				disableOnInteraction: false,
-			},
+			// autoplay: {
+			// 	delay: 2000,
+			// 	disableOnInteraction: false,
+			// },
 			
 
 			// Пагинация
