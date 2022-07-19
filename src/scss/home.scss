@@ -2,6 +2,9 @@
 .main {
     height: 650px;
     position: relative;
+    @media (max-width: 576px) {
+        height: auto;
+    }
     &__bg {
         position: absolute;
         top: 0;
@@ -35,9 +38,9 @@
 
     &__title {
         font-weight: 700;
-        font-size: 54px;
         max-width: 490px;
         margin-bottom: 24px;
+        @include adaptiveValue('font-size', 54, 32, 576, 320, 1)
     }
 
     &__subtitle {
@@ -49,6 +52,9 @@
         display: flex;
         flex-wrap: wrap;
         width: 850px;
+        @media (max-width: 850px) {
+            width: 100%;
+        }
         &__header {
             flex: 0 0 100%;
         }
@@ -78,6 +84,13 @@
                 "A B"
                 "C D";
             gap: 10px 7px;
+            @media (max-width: 576px) {
+                grid-template-areas:
+                                    "A"
+                                    "B"
+                                    "C"
+                                    "D";
+            }
         }
     
         &__input-body {
@@ -129,6 +142,12 @@
         gap: 66px;
         position: relative;
         z-index: 5;
+        @media (max-width: $mobile) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__item {
@@ -136,6 +155,14 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        &:last-child {
+            @media (max-width: $mobile) {
+                grid-column: 1 / 3;
+            }
+            @media (max-width: 576px) {
+                grid-column: unset;
+            }
+        }
     }
 
     &__img {
@@ -212,6 +239,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
+            @media (max-width: $tablet) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @media (max-width: 576px) {
+                padding: 0 20px;
+                grid-template-columns: 1fr;
+            }
         }
     
         &__item {
@@ -288,6 +322,15 @@
         height: 100%;
         width: 100%;
         z-index: -1;
+        &:before{
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 6, 22, 0.32);
+        }
         img{
             height: 100%;
             width: 100%;
@@ -320,8 +363,8 @@
 
     &__subtitle {
         font-weight: 400;
-    font-size: 24px;
-    margin-bottom: 27px;
+        font-size: 24px;
+        margin-bottom: 27px;
     }
 
     .form {
@@ -330,7 +373,9 @@
         width: 495px;
         gap: 27px;
         margin-bottom: 47px;
-
+        @media (max-width: 576px) {
+            width: 100%;
+        }
         &__input {
             background: #FFFFFF;
             border-radius: 5px;
@@ -379,6 +424,10 @@
         justify-content: space-between;
         align-items: center;
         padding: 22px 0;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     &__logo {
@@ -394,6 +443,11 @@
     &__list {
         display: flex;
         gap: 167px;
+        @include adaptiveValue('gap', 167, 50, 1366, 992, 1);
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     &__item {
@@ -403,7 +457,6 @@
     }
 }
 
-
 .footer {
     background: #141414;
     &__container {
@@ -412,11 +465,18 @@
     &__body {
         display: grid;
         padding: 45px 0 90px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
                             "A B C"
                             "E E E";
         column-gap: 30px;
+        @media (max-width: $tablet) {
+            grid-template-areas: "A A"
+                                 "B B"
+                                 "C C"
+                                 "E E";
+            row-gap: 30px;
+        }
     }
 
     &__news {
@@ -457,8 +517,12 @@
         text-align: center;
         line-height: 137%;
         color: #A7ABAB;
+        @media (max-width: $tablet) {
+            margin-top: 0;
+        }
     }
 }
+
 .footer-news {
 
     &__title {
@@ -496,6 +560,7 @@
         color: #BDBDBD;
     }
 }
+
 .footer-info {
 
     &__about {
@@ -524,6 +589,9 @@
         border-bottom: 2px solid #5D5D5D;
         padding-bottom: 59px;
         margin-bottom: 31px;
+        @media (max-width: $tablet) {
+            align-items: center;
+        }
         & > a, div {
             display: flex;
             align-items: center;
@@ -602,7 +670,6 @@
     }
 }
 
-
 .search-car {
     padding: 72px 0 97px;
     color: #040813;
@@ -635,6 +702,7 @@
     &__drivers {
     }
 }
+
 .drivers {
 
     &__select-body {

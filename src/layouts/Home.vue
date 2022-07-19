@@ -182,6 +182,39 @@
                 Спецпредложение от авиакомпании.
               </div>
             </div>
+            <div class="footer-news__item">
+              <div class="footer-news__img">
+                <img src="img/bg/footernew.jpg" alt="">
+              </div>
+              <div class="footer-news__item-title">
+                Добро пожаловать в Тбилиси
+              </div>
+              <div class="footer-news__text">
+                Спецпредложение от авиакомпании.
+              </div>
+            </div>
+            <div class="footer-news__item">
+              <div class="footer-news__img">
+                <img src="img/bg/footernew.jpg" alt="">
+              </div>
+              <div class="footer-news__item-title">
+                Добро пожаловать в Тбилиси
+              </div>
+              <div class="footer-news__text">
+                Спецпредложение от авиакомпании.
+              </div>
+            </div>
+            <div class="footer-news__item">
+              <div class="footer-news__img">
+                <img src="img/bg/footernew.jpg" alt="">
+              </div>
+              <div class="footer-news__item-title">
+                Добро пожаловать в Тбилиси
+              </div>
+              <div class="footer-news__text">
+                Спецпредложение от авиакомпании.
+              </div>
+            </div>
           </div>
         </div>
         <div class="footer__info footer-info">
@@ -300,24 +333,4 @@ export default {
 
 
 <style lang="scss">
-.header {
-  &__body {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .account {
-    display: flex;
-    gap: 21px;
-
-    &__login {
-      font-weight: 700;
-      color: #333333;
-    }
-
-    &__reg {
-      padding: 7px 24px;
-    }
-  }
-}
 </style>
