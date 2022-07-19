@@ -413,13 +413,18 @@
         display: grid;
         padding: 45px 0 90px;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+                            "A B C"
+                            "E E E";
         column-gap: 30px;
     }
 
     &__news {
+        grid-area: A;
     }
 
     &__info {
+        grid-area: B;
     }
 
     &__title {
@@ -430,6 +435,7 @@
     }
 
     &__tour {
+        grid-area: C;
     }
 
     &__tour-title {
@@ -446,6 +452,11 @@
     }
 
     &__copiryght {
+        grid-area: E;
+        margin-top: 48px;
+        text-align: center;
+        line-height: 137%;
+        color: #A7ABAB;
     }
 }
 .footer-news {

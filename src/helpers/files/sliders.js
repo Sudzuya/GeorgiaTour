@@ -34,12 +34,13 @@ function initSliders() {
 			// для конкретного случая
 			wrapperClass:'tour-slider__wrapper',
 			slideClass:'tour-slider__slide',
+			slideActiveClass:'active-slide',
 			modules: [Navigation, Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 3,
-			spaceBetween: 30,
-			autoHeight: true,
+			spaceBetween: 40,
+			// autoHeight: true,
 			speed: 800,
 			centeredSlides:true,
 			//touchRatio: 0,
@@ -75,8 +76,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.navigation-slider .navigation-slider__prev',
-				nextEl: '.navigation-slider .navigation-slider__next',
+				prevEl: '.tour-slider__navigation .tour-slider__navigation-prev',
+				nextEl: '.tour-slider__navigation .tour-slider__navigation-next',
 			},
 
 			// Брейкпоинты
@@ -93,7 +94,7 @@ function initSliders() {
 				},
 				768: {
 					slidesPerView: 3,
-					spaceBetween: 20,
+					spaceBetween: 110,
 				},
 			},
 			
@@ -133,9 +134,7 @@ function initSlidersScroll() {
 	}
 }
 
-window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
-	initSliders();
+	export {initSliders}
 	// Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
 	//initSlidersScroll();
-});

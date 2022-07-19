@@ -2,9 +2,9 @@
   <header class="header">
     <div class="header__container">
       <div class="header__body">
-        <a  class="header__logo">
+        <router-link :to="{name:'Home'}" class="header__logo">
           <img src="img/logo.svg" alt="">
-        </a>
+        </router-link>
         <div class="header__account account">
           <button class="account__login">Войти</button>
           <button class="account__reg btn-orange">Регистрация</button>

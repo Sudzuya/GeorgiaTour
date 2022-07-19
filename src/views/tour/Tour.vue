@@ -18,28 +18,38 @@
           </div>
         </div>
         <div class="tour-slider-body">
-          <div class="tour-slider-body__title">
-            Галерея
+          <div class="tour-slider-body__container">
+            <div class="tour-slider-body__title">
+              Галерея
+            </div>
+            <div class="tour-full__gallery tour-slider">
+              <div class="tour-slider__wrapper">
+              <div class="tour-slider__slide">
+                <div class="tour-slider__item">
+                  <img src="img/tour/slider/01.jpg" alt="">
+                </div>
+              </div>
+              <div class="tour-slider__slide">
+                <div class="tour-slider__item">
+                  <img src="img/tour/slider/02.jpg" alt="">
+                </div>
+              </div>
+              <div class="tour-slider__slide">
+                <div class="tour-slider__item">
+                  <img src="img/tour/slider/03.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="tour-slider__navigation">
+              <button class="tour-slider__navigation-prev">
+                <img src="img/icon/arrleft.svg" alt="">
+              </button>
+              <button class="tour-slider__navigation-next">
+                <img src="img/icon/arrright.svg" alt="">
+              </button>
+            </div>
           </div>
-          <div class="tour-full__gallery tour-slider">
-          <div class="tour-slider__wrapper">
-            <div class="tour-slider__slide">
-              <div class="tour-slider__item">
-                <img src="img/tour/slider/01.jpg" alt="">
-              </div>
-            </div>
-            <div class="tour-slider__slide">
-              <div class="tour-slider__item">
-                <img src="img/tour/slider/02.jpg" alt="">
-              </div>
-            </div>
-            <div class="tour-slider__slide">
-              <div class="tour-slider__item">
-                <img src="img/tour/slider/03.jpg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
     </div>
@@ -48,16 +58,22 @@
 
 <script>
 import '../../helpers/files/sliders.js';
+import {initSliders} from "@/helpers/files/sliders";
 
 export default {
   name:'tour',
-
+  mounted() {
+    initSliders()
+  }
 }
 </script>
 
 <style lang="scss">
+@import "../../scss/base/mixins";
 .tour-full{
+  background: #F3F6F8;
   color: #040813;
+  padding-bottom: 97px;
   &__item{
     margin-bottom: 72px;
   }
@@ -96,13 +112,21 @@ export default {
   &__text {
     font-size: 18px;
     line-height: 137%;
+    margin-bottom: 42px;
   }
   &__action {
     display: flex;
     gap: 30px;
   }
 }
+
 .tour-slider-body {
+  position: relative;
+  padding: 0px 110px;
+  &__container{
+    max-width: rem(1130);
+    padding: 0;
+  }
   &__title{
     font-weight: 600;
     font-size: 32px;
@@ -110,22 +134,46 @@ export default {
     margin-bottom: 42px;
   }
 }
+
 .tour-slider{
   display: flex;
+  height: 415px;
   overflow: hidden;
 
   &__wrapper{
     display: flex;
-
+    align-items: center;
+  }
+  &__slide {
+    flex-shrink:0;
   }
   &__item{
-    width: 410px;
-    height: 415px;
+    //height: 305px;
+    //width: 305px;
+    transition: all .5s ease;
     img{
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
   }
+  .active-slide {
+    .tour-slider__item{
+      transform: scale(1.5);
+      //width: 410px;
+      //height: 415px;
+    }
+  }
+}
+
+.tour-slider__navigation {
+  position: absolute;
+  top: calc(50% + 32px);
+  left: 50%;
+  max-width: 1130px;
+  width: 100%;
+  transform: translateY(50%) translateX(-50%);
+  display: flex;
+  justify-content: space-between;
 }
 </style>

@@ -2,9 +2,9 @@
   <header class="header">
     <div class="header__container">
       <div class="header__body">
-        <a  class="header__logo">
+        <router-link :to="{name:'Home'}" class="header__logo">
           <img src="img/logo.svg" alt="">
-        </a>
+        </router-link>
         <div class="header__account account">
           <button class="account__login">Войти</button>
           <button class="account__reg btn-orange">Регистрация</button>
@@ -284,7 +284,7 @@ export default {
             route.params.to = form.value.to
             route.params.date = form.value.date
           } else {
-            router.push({name: 'home'})
+            router.push({name: 'Home'})
           }
         },
         {
@@ -306,18 +306,18 @@ export default {
     align-items: center;
     justify-content: space-between;
   }
-}
-.account {
-  display: flex;
-  gap: 21px;
+  .account {
+    display: flex;
+    gap: 21px;
 
-  &__login {
-    font-weight: 700;
-    color: #333333;
-  }
+    &__login {
+      font-weight: 700;
+      color: #333333;
+    }
 
-  &__reg {
-    padding: 7px 24px;
+    &__reg {
+      padding: 7px 24px;
+    }
   }
 }
 </style>
