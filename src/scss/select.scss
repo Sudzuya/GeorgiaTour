@@ -1,0 +1,87 @@
+.drivers__select-body {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.app-select {
+  position: relative;
+  flex: 1 1 33.333%;
+  @media (max-width: $mobile) {
+    flex: 1 1 45%;
+  }
+
+  &.active{
+    .app-select__options{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .app-select__title {
+      img{
+        transform: scale(1,-1);
+      }
+    }
+  }
+
+  &__header {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    @media (max-width: $tablet) {
+      @include adaptiveValue("font-size",18 ,14, 576, 320, 1 );
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("gap",24 ,14, 576, 320 );
+    @media (max-width: $tablet) {
+      justify-content: space-between;
+    }
+    img {
+      transition: transform .5s ease;
+    }
+  }
+
+  &__arrow {
+  }
+
+  &__body {
+  }
+
+  &__result {
+    font-weight: 700;
+    font-size: 24px;
+    color: #F9A545;
+    @media (max-width: $tablet) {
+      font-size: 18px;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #E0E0E0;
+    font-weight: 700;
+    font-size: 24px;
+    width: 235px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    @media (max-width: $tablet) {
+      font-size: 18px;
+    }
+  }
+
+  &__option {
+    padding: 8px 20px;
+    border-bottom: 1px solid #AAAAAA;
+    cursor: pointer;
+  }
+}

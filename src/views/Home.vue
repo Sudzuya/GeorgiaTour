@@ -2,7 +2,7 @@
   <section class="tour">
     <div class="tour__container">
       <div class="tour__body">
-        <div class="tour__title">
+        <div class="tour__title medium-title">
           Специальные предложения Города Грузии
         </div>
         <div data-tabs class="tabs">

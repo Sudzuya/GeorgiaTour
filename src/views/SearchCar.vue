@@ -216,8 +216,5 @@ export default {
 </script>
 
 <style>
-.drivers__select-body {
-  display: flex;
-  justify-content: space-between;
-}
+
 </style>

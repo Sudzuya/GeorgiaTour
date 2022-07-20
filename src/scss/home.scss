@@ -3,6 +3,9 @@
     height: 650px;
     position: relative;
     @media (max-width: 576px) {
+        height: calc(100vh - 55px);
+    }
+    @media (max-height: 625px) {
         height: auto;
     }
     &__bg {
@@ -30,6 +33,10 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: 576px) {
+            padding-top: 60px;
+            gap: 24px;
+        }
     }
 
     &__info {
@@ -37,10 +44,8 @@
     }
 
     &__title {
-        font-weight: 700;
         max-width: 490px;
         margin-bottom: 24px;
-        @include adaptiveValue('font-size', 54, 32, 576, 320, 1)
     }
 
     &__subtitle {
@@ -67,6 +72,9 @@
             border-radius: 10px 10px 0 0;
             padding: 14px 24px 14px 16px;
             width: 250px;
+            @media (max-width: 400px) {
+                width: 100%;
+            }
         }
     
         &__button-img {
@@ -90,6 +98,7 @@
                                     "B"
                                     "C"
                                     "D";
+                padding: 16px;
             }
         }
     
@@ -197,8 +206,6 @@
 
     &__title {
         color: #040813;
-        font-weight: 600;
-        font-size: 32px;
         max-width: 500px;
         text-align: center;
         margin: 0 auto 80px auto;
@@ -207,6 +214,8 @@
     .tabs {
 
         &__navigation {
+            display: flex;
+            align-items: center;
             margin-bottom: 71px;
             background: #F3F6F8;
             color: #040813;
@@ -338,6 +347,10 @@
         }
     }
 
+    &__form{
+        width: 100%;
+    }
+
     &__container {
         height: 100%;
     }
@@ -355,8 +368,6 @@
     }
 
     &__title {
-        font-weight: 600;
-        font-size: 32px;
         max-width: 500px;
         margin-bottom: 36px;
     }
@@ -372,7 +383,7 @@
         flex-direction: column;
         width: 495px;
         gap: 27px;
-        margin-bottom: 47px;
+        margin:0 auto 47px auto;
         @media (max-width: 576px) {
             width: 100%;
         }
@@ -380,6 +391,9 @@
             background: #FFFFFF;
             border-radius: 5px;
             padding: 23px;
+            @media (max-width: $mobile) {
+                padding: 16px;
+            }
         }
     
         &__submit {
@@ -427,12 +441,13 @@
         @media (max-width: $mobile) {
             flex-wrap: wrap;
             justify-content: center;
+            padding: 16px 0;
         }
     }
 
     &__logo {
-        height: 80px;
-        width: 200px;
+        @include adaptiveValue('width', 200, 140, 768, 576, 1);
+        @include adaptiveValue('height', 80, 55, 768, 576, 1);
         img {
             height: 100%;
             width: 100%;
@@ -454,219 +469,6 @@
     }
 
     &__link {
-    }
-}
-
-.footer {
-    background: #141414;
-    &__container {
-    }
-
-    &__body {
-        display: grid;
-        padding: 45px 0 90px;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-                            "A B C"
-                            "E E E";
-        column-gap: 30px;
-        @media (max-width: $tablet) {
-            grid-template-areas: "A A"
-                                 "B B"
-                                 "C C"
-                                 "E E";
-            row-gap: 30px;
-        }
-    }
-
-    &__news {
-        grid-area: A;
-    }
-
-    &__info {
-        grid-area: B;
-    }
-
-    &__title {
-        font-weight: 700;
-        font-size: 16px;
-        margin-bottom: 37px;
-        text-align: center;
-    }
-
-    &__tour {
-        grid-area: C;
-    }
-
-    &__tour-title {
-
-    }
-
-    &__tour-popular {
-    }
-
-    &__tour-policy {
-    }
-
-    &__tour-pyment {
-    }
-
-    &__copiryght {
-        grid-area: E;
-        margin-top: 48px;
-        text-align: center;
-        line-height: 137%;
-        color: #A7ABAB;
-        @media (max-width: $tablet) {
-            margin-top: 0;
-        }
-    }
-}
-
-.footer-news {
-
-    &__title {
-        font-weight: 700;
-        font-size: 16px;
-        margin-bottom: 37px;
-        text-align: center;
-    }
-
-    &__body {
-    }
-
-    &__item {
-        display: grid;
-        grid-template-areas:
-            "A B"
-            "A C";
-        column-gap: 16px;
-    }
-
-    &__img {
-        grid-area: A;
-    }
-
-    &__item-title {
-        grid-area: B;
-        font-weight: 700;
-        font-size: 14px;
-    }
-
-    &__text {
-        grid-area: C;
-        font-weight: 400;
-        font-size: 14px;
-        color: #BDBDBD;
-    }
-}
-
-.footer-info {
-
-    &__about {
-    }
-
-    &__about-title {
-        font-weight: 700;
-        font-size: 16px;
-        margin-bottom: 37px;
-        text-align: center;
-    }
-
-    &__about-text {
-        color: #AAAAAA;
-        padding-bottom: 42px;
-        margin-bottom: 56px;
-        border-bottom: 2px solid #5D5D5D;
-        line-height: 137%;
-    }
-
-    &__contact {
-        color: #AAAAAA;
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-        border-bottom: 2px solid #5D5D5D;
-        padding-bottom: 59px;
-        margin-bottom: 31px;
-        @media (max-width: $tablet) {
-            align-items: center;
-        }
-        & > a, div {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-    }
-
-    &__contact-geo {
-    }
-
-    &__contact-img {
-    }
-
-    &__contact-tel {
-    }
-
-    &__contact-mail {
-    }
-
-    &__social {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-    }
-
-    &__social-item {
-    }
-}
-
-.popular-tour {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 13px;
-    padding-bottom: 35px;
-    margin-bottom: 31px;
-    border-bottom: 2px solid #5D5D5D;
-
-    &__item {
-        border: 1px solid #5D5D5D;
-        border-radius: 24px;
-        padding: 12px 28px;
-        color: #A7ABAB;
-    }
-}
-
-.policy-tour {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 13px;
-    padding-bottom: 35px;
-    margin-bottom: 31px;
-    border-bottom: 2px solid #5D5D5D;
-
-    &__link {
-        font-weight: 500;
-        color: #A7ABAB;  
-    }
-}
-
-.pyment-tour {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-
-    &__img {
-        width: 80px;
-        height: 70px;
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-        }
     }
 }
 
@@ -715,20 +517,27 @@
 
     &__list {
         display: grid;
-        gap: 30px;
         grid-template-columns: 1fr 1fr;
+        @include adaptiveValue("gap",30 ,12, 992, 768,1 );
+        @media (max-width: 576px) {
+            grid-template-columns: 100%;
+        }
     }
 
     &__item {
         background: #F3F6F8;
         color: #040813;
-        padding: 32px;
+        @include adaptiveValue("padding", 32 , 16, 1366, 992, 1 );
     }
 
     &__header {
         display: flex;
         justify-content: space-between;
         margin-bottom: 18px;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            gap: 18px;
+        }
     }
 
     &__info-driver {
@@ -738,11 +547,13 @@
             "A C";
         column-gap: 28px;
         align-items: center;
+        @include adaptiveValue("column-gap",28 ,18, 1366, 1024,1 );
+
     }
 
     &__img-driver {
-        width: 97px;
-        height: 97px;
+        @include adaptiveValue("height",97 ,60, 1366, 1024,1 );
+        @include adaptiveValue("width",97 ,60, 1366, 1024,1 );
         grid-area: A;
         img {
             height: 100%;
@@ -752,18 +563,32 @@
     }
 
     &__img {
-        height: 264px;
-        width: 272px;
+        @include adaptiveValue("height",264 ,180, 1366, 1024,1 );
+        @include adaptiveValue("width",264 ,180, 1366, 1024,1 );
+        @media (max-width: $tablet) {
+            width: 100%;
+            height: 320px;
+        }
+        @media (max-width: $mobile) {
+            @include adaptiveValue("height",320 ,250, 768, 576,1 );
+        }
+        @media (max-width: 576px) {
+            width: 100%;
+            @include adaptiveValue("height",400 ,258, 576, 320,1 );
+        }
         img {
             height: 100%;
             width: 100%;
             object-fit: contain;
+            @media (max-width: 576px) {
+                object-fit: cover;
+            }
         }
     }
 
     &__title {
         font-weight: 700;
-        font-size: 24px;
+        @include adaptiveValue("font-size",24 ,18, 1366, 1024,1 );
     }
 
     &__rating {
@@ -771,13 +596,28 @@
 
     &__type-car {
         font-weight: 700;
-        font-size: 18px;
+        @include adaptiveValue("font-size",18 ,16, 1366, 1024,1 );
+        @media (max-width: $mobile) {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 12px;
+            flex: 0 0 100%;
+        }
     }
 
     &__type-car-img {
-        width: 90px;
-        height: 35px;
-        margin-bottom: 12px;
+        @include adaptiveValue("width",90 ,50, 1366, 1024,1 );
+        @include adaptiveValue("height",35 ,25, 1366, 1024,1 );
+        @include adaptiveValue("margin-bottom",12 ,8, 1366, 1024,1 );
+        margin: 0 auto 12px auto;
+        @media (max-width: 1024px) {
+            @include adaptiveValue("width",50 ,30, 1024, 768,1 );
+            @include adaptiveValue("height",25 ,20, 1024, 768,1 );
+        }
+        @media (max-width: $mobile) {
+            margin: 0;
+        }
         img {
             height: 100%;
             width: 100%;
@@ -791,7 +631,13 @@
     &__lang-body {
         display: flex;
         gap: 5px;
-        margin-bottom: 32px;
+        @include adaptiveValue("margin-bottom",32 ,18, 1366, 1024,1 );
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            span {
+                flex: 0 0 100%;
+            }
+        }
     }
     
 
@@ -806,6 +652,11 @@
         display: flex;
         align-items: center;
         gap: 30px;
+        @include adaptiveValue("gap", 30 , 15, 1366, 992, 1 );
+        @media (max-width:$tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__info {
@@ -814,12 +665,13 @@
 
     &__info-title {
         font-weight: 700;
-        font-size: 24px;
+        @include adaptiveValue("font-size",24 , 18, 1366, 1024, 1 );
         margin-bottom: 18px;
     }
 
     &__info-fuel {
         font-size: 18px;
+        @include adaptiveValue("font-size",18 , 16, 1366, 1024, 1 );
         margin-bottom: 8px;
     }
 
@@ -839,6 +691,9 @@
 
     &__info-book {
         padding: 6px 68px;
+        @include adaptiveValue("padding-right",68 , 30, 1366, 1024, 1 );
+        @include adaptiveValue("padding-left",68 , 30, 1366, 1024, 1 );
+
     }
 }
 

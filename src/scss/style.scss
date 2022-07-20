@@ -131,7 +131,9 @@ body {
 
 // Подключение стилей отдельных блоков
 @import "header";
+@import "select";
 @import "footer";
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "tourPage";

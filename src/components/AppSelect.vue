@@ -1,7 +1,10 @@
 <template>
     <div class="app-select" :class="{'active': activeClass}">
         <div class="app-select__header" v-if="title" @click="setActiveSelect">
-            <div class="app-select__title">{{title}}</div>
+            <div class="app-select__title">
+              {{title}}
+              <img src="/img/icon/arrdown.svg" alt="">
+            </div>
             <div class="app-select__arrow"></div>
         </div>
         <div class="app-select__body">
@@ -67,52 +70,4 @@ export default {
 </script>
 
 <style lang="scss">
-.app-select {
-    position: relative;
-
-        &.active{
-            .app-select__options{
-                opacity: 1;
-            }
-        }
-
-		&__header {
-            font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 12px;
-		}
-
-		&__title {
-		}
-
-		&__arrow {
-		}
-
-		&__body {
-		}
-
-		&__result {
-            font-weight: 700;
-            font-size: 24px;
-            color: #F9A545;
-		}
-
-		&__options {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            background: #E0E0E0;
-            font-weight: 700;
-            font-size: 24px;
-            width: 275px;
-            opacity: 0;
-		}
-
-		&__option {
-                padding: 8px 20px;
-                border-bottom: 1px solid #AAAAAA;
-                cursor: pointer;
-		}
-}
-
 </style>

@@ -5,4 +5,22 @@
     padding: 16px 68px;
     border-radius: 5px;
     background: #F9A545;
+    @media (max-width: 576px) {
+        font-size: 14px;
+    }
+}
+.medium-title{
+    font-size: 32px;
+    font-weight: 600;
+    @include adaptiveValue("font-size",32 , 24, 768, 320, 1 );
+}
+
+.title-big {
+    font-weight: 700;
+    @include adaptiveValue('font-size', 54, 32, 768, 320, 1)
+}
+
+.title {
+    @include adaptiveValue('font-size', 48, 28, 768, 320, 1);
+    font-weight: 500;
 }

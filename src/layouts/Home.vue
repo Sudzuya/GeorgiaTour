@@ -19,7 +19,7 @@
     <div class="main__container">
       <div class="main__body">
         <div class="main__info">
-          <div class="main__title">
+          <div class="main__title title-big">
             <h1>Путешествуйте с нами в Грузию</h1>
           </div>
           <div class="main__subtitle">
@@ -110,7 +110,7 @@
     <div class="callback__container">
       <div class="callback__body">
         <div class="callback__info">
-          <div class="callback__title">
+          <div class="callback__title medium-title">
             Почему путешественники выбирают нас?
           </div>
           <div class="callback__subtitle">
